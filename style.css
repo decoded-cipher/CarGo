@@ -2281,15 +2281,15 @@ body,
 
 
 /*== Page Title CSS ==*/
-/*
+
 #page-title-area {
     background-image: url("assets/img/page-title.jpg");
     background-position: center center;
     background-size: cover;
-    padding-top: 220px;
-}*/
+}
 
 #page-title-area .section-title {
+    margin-top: 0;
     margin-bottom: 0;
 }
 
