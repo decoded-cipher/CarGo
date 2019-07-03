@@ -2286,6 +2286,7 @@ body,
     background-image: url("assets/img/page-title.jpg");
     background-position: center center;
     background-size: cover;
+    padding-top: 220px;
 }
 
 #page-title-area .section-title {
@@ -2293,6 +2294,16 @@ body,
     margin-bottom: 0;
 }
 
+#page-title-area_hello {
+    background-image: url("assets/img/page-title.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+#page-title-area_hello .section-title {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
 /*== Car List CSS ==*/
 
