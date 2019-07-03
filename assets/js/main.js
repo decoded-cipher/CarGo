@@ -1,12 +1,12 @@
 /*global jQuery */
-(function ($) {
+(function($) {
     "use strict";
 
-    jQuery(document).ready(function ($) {
+    jQuery(document).ready(function($) {
         /*---------------------------------
          All Window Scroll Function Start
         --------------------------------- */
-        $(window).scroll(function () {
+        $(window).scroll(function() {
             // Header Fix Js Here
             if ($(window).scrollTop() >= 200) {
                 $('#header-area').addClass('fixTotop');
@@ -31,16 +31,16 @@
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
             minDate: today,
-            maxDate: function () {
+            maxDate: function() {
                 return $('#endDate').val();
             }
         });
 
-        $('#endDate').datepicker({
+        $('#timepicker').timepicker({
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
-            minDate: function () {
-                return $('#startDate').val();
+            minDate: function() {
+                return $('#timepicker').val();
             }
         });
 
@@ -75,7 +75,7 @@
 
 
         // Choose Popular Car Isotope
-        $(".popucar-menu a, .home2-car-filter a").click(function () {
+        $(".popucar-menu a, .home2-car-filter a").click(function() {
 
             $(".popucar-menu a, .home2-car-filter a").removeClass('active');
             $(this).addClass('active');
@@ -90,7 +90,7 @@
 
 
         // Choose Newest Car Isotope
-        $(".newcar-menu a").click(function () {
+        $(".newcar-menu a").click(function() {
 
             $(".newcar-menu a").removeClass('active');
             $(this).addClass('active');
@@ -138,7 +138,7 @@
         }); // Video Bg End
 
         // Click to Scroll TOP
-        $(".scroll-top").click(function () {
+        $(".scroll-top").click(function() {
             $('html, body').animate({
                 scrollTop: 0
             }, 1500);
@@ -160,8 +160,7 @@
             color: '#000',
             animation: 'random',
             animationDuration: 20000,
-            slides: [
-                {
+            slides: [{
                     src: 'assets/img/slider-img/slider-img-1.jpg'
                 },
                 {
@@ -182,17 +181,21 @@
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
             minDate: today,
-            maxDate: function () {
+            maxDate: function() {
                 return $('#endDate2').val();
             }
         });
 
-        $('#endDate2').datepicker({
+        $('#timepicker').timepicker({
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
-            minDate: function () {
-                return $('#startDate2').val();
-            }
+            timeFormat: 'h:mm p',
+            interval: 0,
+            minTime: '0.00',
+            maxTime: '23.45',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: true
         });
 
         // Home Page 3 Slider Start
@@ -248,7 +251,7 @@
 
     }); //Ready Function End
 
-    jQuery(window).load(function () {
+    jQuery(window).load(function() {
         jQuery('.preloader').fadeOut();
         jQuery('.preloader-spinner').delay(350).fadeOut('slow');
         jQuery('body').removeClass('loader-active');
