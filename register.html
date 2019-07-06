@@ -198,7 +198,7 @@
                 	<div class="login-page-content">
                 		<div class="login-form">
                 			<h3>Welcome!</h3>
-							<form action="index.html">
+							<form action="main.html">
 								<div class="name">
 									<div class="row">
 										<div class="col-md-6">
@@ -243,6 +243,117 @@
         </div>
     </section>
     <!--== Login Page Content End ==-->
+
+
+
+    <!--__________________________________________________________________________________________________________________________________-->
+
+
+
+    <!-- The Modal -->
+    <div class="sframe">
+    <div id="myModal" class="smodal">
+        <form method="post" action="" id="verifyform">
+            <!-- Modal content -->
+            <div class="smodal-content">
+                <span class="sclose">&times;</span>
+                <br>
+
+                <div style="display: inline-block;text-align: center">
+                    <img style="margin-left: 50px" src="assets/img/mobile.png" width="150px" height="150px">
+                </div>
+                <div style="text-align: center">
+                    An OTP was sent to your mobile number.<br>Enter OTP to complete User Registration.
+                    
+                    <div class="extra">
+                        <input type="text" placeholder="Enter OTP">
+                    </div>                
+                </div>
+                <button class="mbutton" id="verifybtn">Verfiy OTP</button>
+                <small> Didn't receive OTP?
+                    <a href="#">Resend</a> OTP.
+                </small>
+            </div>
+        </form>
+    </div>
+    </div>
+
+<!--
+    <div id="invalidOTP" class="smodal">
+             Modal content 
+            <div class="smodal-content">
+                <span class="sclose">&times;</span>
+                <br>
+
+                <div style="display: inline-block;text-align: center">
+                    <img style="margin-left: 40px" src="fail.png" width="150px" height="150px">
+                </div><br>
+                <span style="text-align: center">
+                    You have entered and Invalid OTP!
+                </span><br>
+                <button class="mbutton" id="resendbtn">Resend OTP</button>
+
+            </div>
+    </div>
+</div>
+</div>-->
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+var modal2= document.getElementById('invalidOTP');
+
+// // Get the button that opens the modal
+// var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("sclose")[0];
+var span2= document.getElementsByClassName("sclose")[1];
+
+// // When the user clicks the button, open the modal
+// btn.onclick = function () {
+//     modal.style.display = "block";
+// }
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none ";
+}
+span2.onclick = function () {
+    modal2.style.display = "none ";
+}
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none ";
+//     }
+// }
+document.getElementById('otpfrm').addEventListener('submit', showotp)
+document.getElementById('verifyform').addEventListener('submit', invalidotp)
+document.getElementById('resendbtn').addEventListener('click', resendotp)
+
+
+function showotp(e) {
+    e.preventDefault()
+    document.getElementById('myModal').style.display='block'
+    return false;
+}
+function invalidotp(e) {
+    e.preventDefault()
+    document.getElementById('myModal').style.display='none'
+    document.getElementById('invalidOTP').style.display='block'
+    return false;
+}
+function resendotp(e) {
+    e.preventDefault()
+    document.getElementById('invalidOTP').style.display='none'
+    document.getElementById('myModal').style.display='block'
+    return false;
+}
+
+</script>
 
 
 
