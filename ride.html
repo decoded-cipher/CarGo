@@ -116,15 +116,15 @@
                         <div class="col-lg-8 d-none d-xl-block">
                             <nav class="mainmenu alignright">
                                 <ul>
-                                    <li class="active"><a href="#">Home</a>
+                                    <li><a href="#">OVERVIEW</a>
                                         <!--    <ul>
                                             <li><a href="index.html">Home 1</a></li>
                                             <li><a href="index2.html">Home 2</a></li>
                                             <li><a href="index3.html">Home 3</a></li>
                                         </ul>   -->
                                     </li>
-                                    <li><a href="main.html">About</a></li>
-                                    <li><a href="main.html">Features</a></li>
+                                    <li><a href="main.html">TO DRIVE</a></li>
+                                    <li class="active"><a href="main.html">FOR RIDE</a></li>
                                     <!--    <li><a href="#">Cars</a>
                                         <ul>
                                             <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
@@ -145,15 +145,14 @@
                                             <li><a href="404.html">404</a></li>
                                         </ul>
                                     </li>   -->
-                                    <li><a href="main.html">Team</a>
-                                    <li><a href="main.html">Blog</a>
+                                    <li><a href="main.html">NOTIFICATION</a>
+                                    <li><a href="main.html">FAQ</a>
                                         <!--    <ul>
                                             <li><a href="article.html">Blog Page</a></li>
                                             <li><a href="article-details.html">Blog Details</a></li>
                                         </ul>   -->
                                     </li>
-                                    <li><a href="main.html">Contact</a></li>
-                                    <li><a href="login.html">Log In</a></li>
+                                    <li><a href="login.html">Log OUT</a></li>
     
                                 </ul>
                             </nav>
@@ -179,9 +178,9 @@
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
-                        <h2>Sign Up</h2>
+                        <h2>Ride with CarGo</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
-                        <p>Fill-up your entries to step-in and be a part of CarGo family.</p>
+                        <p>Fill-up and experience the pleasure of Shared Trips</p>
                     </div>
                 </div>
                 <!-- Page Title End -->
@@ -195,49 +194,65 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-8 m-auto">
-                	<div class="login-page-content">
+                	<div class="xlogin-page-content">
                 		<div class="login-form">
-                			<h3>Welcome!</h3>
-							<form method="post" action="" id="otpfrm">
-								<div class="name">
-									<div class="row">
-										<div class="col-md-6">
-											<input type="text" placeholder="First Name">
-										</div>
-										<div class="col-md-6">
-											<input type="text" placeholder="Last Name">
-										</div>
-									</div>
-								</div>  
+                			<h3>Go for a Ride!</h3>
+							<form>
 								<div class="username">
-									<input type="email" placeholder="Email">
+									From<input type="text" placeholder="Select Destination">
 								</div>
 								<div class="username">
-									<input type="text" placeholder="Username">
-								</div>
-								<div class="password">
-									<input type="password" placeholder="Password">
-								</div>
+									To<input type="text" placeholder="Select Destination">
+                                </div>
+                                
+                                <div class="name">Payment Method
+                                    <div class="row payment">                                               
+                                            <input type="radio" id="radioApple" name="radioFruit" value="apple">
+                                            <label for="radioApple">By Cash</label>
+                                        
+                                            <input type="radio" id="radioBanana" name="radioFruit" value="banana">
+                                            <label for="radioBanana">Digital Wallet</label>
+                                    </div>
+                                </div>
+
+                                <div class="name">Select Vehicle
+                                    <div class="row vehicle">
+                                        <div class="col-md-3">
+                                            <label>
+                                                <input type="radio" name="test" value="small">
+                                                <img class="img-responsive img-circle" src="assets\img\Ride\01.png">1x
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label>
+                                                    <input type="radio" name="test" value="small">
+                                                    <img class="img-responsive img-circle" src="assets\img\Ride\02.png">2x
+                                            </label>                                        
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label>
+                                                    <input type="radio" name="test" value="small">
+                                                    <img class="img-responsive img-circle" src="assets\img\Ride\03.png">3x
+                                            </label>                                        
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label>
+                                                    <input type="radio" name="test" value="small">
+                                                    <img class="img-responsive img-circle" src="assets\img\Ride\04.png">4x
+                                            </label>                                        
+                                        </div>
+                                    </div>
+                                </div>
+								
 								<div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Sign Up</button>
+									<button type="submit"><i class="fa fa-check-square"></i> Book Now</button>
 								</div>
 							</form>
                 		</div>
-                		
-                		<div class="login-other">
-                			<span class="or">or</span>
-                			<a href="#" class="login-with-btn facebook"><i class="fa fa-facebook"></i> Signup With Facebook</a>
-                			<a href="#" class="login-with-btn google"><i class="fa fa-google"></i> Signup With Google</a>
-                		</div>
-                		<div class="create-ac">
-                			<p>Have an account? <a href="login.html">Sign In</a></p>
-                		</div>
-                		<div class="login-menu">
-                			<a href="main.html">About</a>
-                			<span>|</span>
-                			<a href="main.html">Contact</a>
-                		</div>
-                	</div>
+                	</div>		
                 </div>
         	</div>
         </div>
@@ -246,118 +261,10 @@
 
 
 
-    <!--__________________________________________________________________________________________________________________________________-->
-
-
-
-    <!-- The Modal -->
-    <div class="sframe">
-    <div id="myModal" class="smodal">
-        <form method="post" action="" id="verifyform">
-            <!-- Modal content -->
-            <div class="smodal-content">
-                <span class="sclose">&times;</span>
-                <br>
-
-                <div style="display: inline-block;text-align: center">
-                    <img style="margin-left: 50px" src="assets/img/mobile.png" width="150px" height="150px">
-                </div>
-                <div style="text-align: center">
-                    An OTP was sent to your mobile number.<br>Enter OTP to complete User Registration.
-                    
-                    <div class="extra">
-                        <input type="text" placeholder="Enter OTP">
-                    </div>                
-                </div>
-                <button class="mbutton" id="verifybtn">Verfiy OTP</button>
-                <small> Didn't receive OTP?
-                    <a href="#">Resend</a> OTP.
-                </small>
-            </div>
-        </form>
-    </div>
-    </div>
-
-<!--
-    <div id="invalidOTP" class="smodal">
-             Modal content 
-            <div class="smodal-content">
-                <span class="sclose">&times;</span>
-                <br>
-
-                <div style="display: inline-block;text-align: center">
-                    <img style="margin-left: 40px" src="fail.png" width="150px" height="150px">
-                </div><br>
-                <span style="text-align: center">
-                    You have entered and Invalid OTP!
-                </span><br>
-                <button class="mbutton" id="resendbtn">Resend OTP</button>
-
-            </div>
-    </div>
-</div>
-</div>-->
-
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-var modal2= document.getElementById('invalidOTP');
-
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("sclose")[0];
-var span2= document.getElementsByClassName("sclose")[1];
-
-// // When the user clicks the button, open the modal
-// btn.onclick = function () {
-//     modal.style.display = "block";
-// }
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none ";
-}
-span2.onclick = function () {
-    modal2.style.display = "none ";
-}
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none ";
-//     }
-// }
-document.getElementById('otpfrm').addEventListener('submit', showotp)
-document.getElementById('verifyform').addEventListener('submit', invalidotp)
-document.getElementById('resendbtn').addEventListener('click', resendotp)
-
-
-function showotp(e) {
-    e.preventDefault()
-    document.getElementById('myModal').style.display='block'
-    return false;
-}
-function invalidotp(e) {
-    e.preventDefault()
-    document.getElementById('myModal').style.display='none'
-    document.getElementById('invalidOTP').style.display='block'
-    return false;
-}
-function resendotp(e) {
-    e.preventDefault()
-    document.getElementById('invalidOTP').style.display='none'
-    document.getElementById('myModal').style.display='block'
-    return false;
-}
-
-</script>
-
 
 
     <!--__________________________________________________________________________________________________________________________________-->
+
 
 
 

@@ -15,6 +15,120 @@
 */
 
 
+.login-form form {
+    text-align: left;
+ }
+
+ .xlogin-form {
+    background-color: #ffd000;
+    padding: 50px 20px 15px;
+}
+
+ .xlogin-page-content {
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    padding-bottom: 35px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.img-circle {
+    border-radius: 50%;
+    border: 1px solid;
+    border-color: #555;
+  }
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.vehicle {
+    font-family: inherit;
+    color: #555;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 10px; 
+    line-height: inherit;
+}
+
+.vehicle input:hover {
+    border-color: #fff;
+}
+
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  [type=radio]:checked + img {
+    border: 1px solid #fff;
+  }
+  
+  /* IMAGE STYLES */
+  [type=radio] + img {
+    cursor: pointer;
+  }
+
+
+  .payment {
+    margin: 10px;
+  }
+  
+  .payment input[type="radio"] {
+      display:none; 
+      height: inherit;
+      width: inherit;
+  }
+  
+  .payment label {
+      display:inline-block;
+      background-color:transparent;
+      padding: 10px 50px;
+      font-family:inherit;
+      font-size: inherit;
+      border: 1px solid #333;
+      margin: 5px;
+  }
+  
+  .payment label:hover {
+    border-color: #fff;
+}
+  
+  .payment input[type="radio"]:checked + label { 
+      border-color: #fff;
+  }
+
+  [type="radio"] + label { 
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=======================================================================================================================================
+=======================================================================================================================================
+=======================================================================================================================================*/
+
+
 .extra input{
     width: 100%;
     padding: 7px 7px;
@@ -29,7 +143,7 @@
     position: absolute;
     top: 7%;
     left: 50%;
-    /*border-radius: 5px;*/
+    border-radius: 5px;
     border-bottom: 5px solid #f7c900;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 30%;
