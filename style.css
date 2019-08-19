@@ -277,7 +277,7 @@
 /* The Modal (background) */
 
 .smodal {
-/*    display: none;    */
+    display: none;    
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
