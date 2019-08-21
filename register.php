@@ -513,3 +513,27 @@ function resendotp(e) {
 </body>
 
 </html>
+
+
+
+
+<!--__________________________________________________________________________________________________________________________________-->
+<!--__________________________________________________________________________________________________________________________________-->
+
+
+<?php
+    $con = mysqli_connect("localhost","root","","cargo");
+    if(isset($_POST['SUBMIT']))
+    { 
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $email = $_POST['email'];
+        $mobile = $_POST['mobile'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $qry = "INSERT INTO registration (first_name, last_name, email, mobile, username, passwrd) 
+                VALUES ('".$first_name."' , '".$last_name."' , '".$email."' , '".$mobile."' , '".$username."' , '".$password."')";
+        mysqli_query($con, $qry);
+    }
+    mysqli_close($con);
+?>
