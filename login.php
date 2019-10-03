@@ -198,19 +198,21 @@
                 	<div class="login-page-content">
                 		<div class="login-form">
                 			<h3>Welcome Back!</h3>
-							<form action="index.html">
+                            
+                            <form method="POST" action="" name="login">
 								<div class="username">
-									<input type="text" placeholder="Email or Username">
+									<input type="text" name="username" placeholder="Email or Username">
 								</div>
 								<div class="password">
-									<input type="password" placeholder="Password">
+									<input type="password" name="passwrd" placeholder="Password">
 								</div>
 								<div class="log-btn">
-									<button type="submit"><i class="fa fa-sign-in"></i> Log In</button>
+									<button type="submit" name="SUBMIT" value="SUBMIT" onClick="return validation();">
+                                        <i class="fa fa-sign-in"></i> Log In</button>
 								</div>
-							</form>
+                            </form>
+                            
                 		</div>
-                		
                 		<div class="login-other">
                 			<span class="or">or</span>
                 			<a href="#" class="login-with-btn facebook"><i class="fa fa-facebook"></i> Login With Facebook</a>
@@ -381,3 +383,74 @@
 </body>
 
 </html>
+
+
+
+
+<!--____________________________________________________________________________________________________________________________________-->    
+<!--____________________________________________________________________________________________________________________________________-->    
+
+
+
+
+        <?php
+          $msg="";
+            $con = mysqli_connect("localhost","root","","cargo");
+
+            if(isset($_POST['SUBMIT'])) 
+            {
+                $username = $_POST['username'];
+                $passwrd = $_POST['passwrd'];
+                $qry = "SELECT username, passwrd FROM registration WHERE username='".$username."' AND passwrd='".$passwrd."' LIMIT 1";
+            //    $sql = "select email,password from regis where email='".$uname."' AND password='".$password."' limit 1";
+                $result = mysqli_query($con, $qry);
+                if(mysqli_num_rows($result) ==1)
+                {
+                    header('location:drive.html');
+                }
+                // else
+                // {
+                //     $msg="Invalid Details.";
+                //     echo $msg;
+                // }
+            }
+        ?>
+
+
+
+
+<!--____________________________________________________________________________________________________________________________________-->    
+<!--____________________________________________________________________________________________________________________________________-->
+
+
+
+
+        <script type ="text/javascript" language="javascript">
+            function validation()
+            {
+                var username = document.forms["login"]["username"];
+                var passwrd = document.forms["login"]["passwrd"];
+                
+                if(username.value == "")
+                {
+                    window.alert("Please enter your User Name");
+                    username.focus();
+                    return false;
+                }
+
+                else if(passwrd.value == "")
+                {
+                    window.alert("Please enter your Password");
+                    passwrd.focus();
+                    return false;
+                }
+
+                else
+                return true;
+            }
+        </script>
+
+
+
+<!--____________________________________________________________________________________________________________________________________-->    
+<!--____________________________________________________________________________________________________________________________________-->
