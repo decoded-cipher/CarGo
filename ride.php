@@ -265,8 +265,10 @@
 
 <!--________________________________________________________________________________________________________________________________-->
 
+
+
                                 
-                                <div class="name">Payment Method
+                                <!-- <div class="name">Payment Method
                                     <div class="row payment">                                               
                                             <input type="radio" id="radioApple" name="radioFruit" value="apple">
                                             <label for="radioApple">By Cash</label>
@@ -306,7 +308,7 @@
                                             </label>                                        
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 								
 								<div class="log-btn">
 									<button type="submit"><i class="fa fa-check-square"></i> Book Now</button>
