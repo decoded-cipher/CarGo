@@ -355,7 +355,7 @@
                                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
                                 ARJUN KRISHNA</h4>
                             <h6 style="color: gray;">+91 9400057152<h6>
-                            <h6 style="color: gray;">unnielava@gmail.com</h6><br>
+                            <h6 style="color: gray;">arjun12345krishna@gmail.com</h6><br>
 
                             <div class="route">
                                 <div class="from"><p>Source: Kottayam</p></div>
