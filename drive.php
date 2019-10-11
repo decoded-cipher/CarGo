@@ -50,6 +50,43 @@
 
 
 
+    <style>
+        .abc button {
+            padding: 7px;
+            cursor: pointer;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            background-color: transparent;
+            border: 1px solid black;
+            width: 40%;
+            margin: 5px 0px;
+        }
+        .abc button:hover {
+            background-color: #ffd000;
+            border-color: #ffd000;
+            font-weight: bold;
+            color: white;
+        }
+        .book button {
+            padding: 7px;
+            cursor: pointer;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            background-color: #ffd000;
+            font-weight: bold;
+            color: white;
+            border: 1px solid;
+            width: 85%;
+            margin: 25px 0px 5px 0px;
+        }
+        /* .book button:hover {
+            background-color: #ffd000;
+            border-color: #ffd000;
+            font-weight: bold;
+            color: white;
+        } */
+    </style>
+
 <!--__________________________________________________________________________________________________________________________________-->
 
 
@@ -131,7 +168,7 @@
                                             <li><a href="car-right-sidebar.html">Car Right Sidebar</a></li>
                                             <li><a href="car-without-sidebar.html">Car Without Sidebar</a></li>
                                             <li><a href="car-details.html">Car Details</a></li>
-                                        </ul>
+                                        </ul>   
                                     </li>   -->
                                     <!--    <li><a href="index.html">Pages</a>
                                         <ul>
@@ -247,9 +284,6 @@
 
 
 
-
-
-
                                 <div class="name">Select Vehicle
                                     <div class="row vehicle">
                                         <div class="col-md-3">
@@ -293,6 +327,133 @@
         </div>
     </section>
     <!--== Login Page Content End ==-->
+
+
+
+
+
+<!--________________________________________________________________________________________________________________________________-->
+
+
+
+
+
+
+        <!-- The Modal -->
+        <div class="xsframe">
+            <div id="myModal" class="xsmodal">
+                <form method="post" action="" id="verifyform">
+                    <!-- Modal content -->
+                    <div class="xsmodal-content">
+                        <span class="xsclose">&times;</span>
+                        <br>
+
+                        <div class="driver_details" style="display: inline-block; text-align: center">
+                            <img style="margin-left: 30px" src="assets/img/img_avatar_1.png" width="150px" height="150px">
+                        </div>
+                            <h4 style="margin: 20px 0px 5px 0px;
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                                ARJUN KRISHNA</h4>
+                            <h6 style="color: gray;">+91 9400057152<h6>
+                            <h6 style="color: gray;">unnielava@gmail.com</h6><br>
+
+                            <div class="route">
+                                <div class="from"><p>Source: Kottayam</p></div>
+                                <div class="to"><p>Destination: Kochi</p></div>
+                                <div class="time"><h6 style="color: gray;">Time:  16:00</h6></div>
+                            </div>
+                            
+                            <div class="book" style="">
+                                <button type="submit">BOOK</button>
+                            </div>
+
+                            <div class="abc" style="float=right;">
+                                <button type="submit">Previous</button>
+                                <button type="submit" style="margin: 0px 0px 0px 15px;">Next</button>
+                            </div>
+                                
+
+                           
+                        
+                        <!-- <div style="text-align: center">
+                            An OTP was sent to your mobile number.<br>Enter OTP to complete User Registration.
+                            
+                            <div class="xextra">
+                                <input type="text" placeholder="Enter OTP">
+                            </div>                
+                        </div>
+                        <button class="xmbutton" id="verifybtn">Book Carpool</button>
+                        <small> Didn't receive OTP?
+                            <a href="#">Resend</a> OTP.
+                        </small>-->
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+
+
+
+
+        <script>
+                // Get the modal
+                var modal = document.getElementById('myModal');
+                var modal2= document.getElementById('invalidOTP');
+                
+                // // Get the button that opens the modal
+                // var btn = document.getElementById("myBtn");
+                
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("xsclose")[0];
+                var span2= document.getElementsByClassName("xsclose")[1];
+                
+                // // When the user clicks the button, open the modal
+                // btn.onclick = function () {
+                //     modal.style.display = "block";
+                // }
+                
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none ";
+                }
+                span2.onclick = function () {
+                    modal2.style.display = "none ";
+                }
+                
+                // // When the user clicks anywhere outside of the modal, close it
+                // window.onclick = function(event) {
+                //     if (event.target == modal) {
+                //         modal.style.display = "none ";
+                //     }
+                // }
+                document.getElementById('otpfrm').addEventListener('submit', showotp)
+                document.getElementById('verifyform').addEventListener('submit', invalidotp)
+                document.getElementById('resendbtn').addEventListener('click', resendotp)
+                
+                
+                function showotp(e) {
+                    e.preventDefault()
+                    document.getElementById('myModal').style.display='block'
+                    return false;
+                }
+                function invalidotp(e) {
+                    e.preventDefault()
+                    document.getElementById('myModal').style.display='none'
+                    document.getElementById('invalidOTP').style.display='block'
+                    return false;
+                }
+                function resendotp(e) {
+                    e.preventDefault()
+                    document.getElementById('invalidOTP').style.display='none'
+                    document.getElementById('myModal').style.display='block'
+                    return false;
+                }
+                
+                </script>
+                
+
+
 
 
 
