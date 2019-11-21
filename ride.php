@@ -239,12 +239,15 @@
                 	<div class="xlogin-page-content">
                 		<div class="login-form">
                 			<h3>Go for a Ride!</h3>
-							<form>
+							
+                            
+                            
+                            <form method="POST" action="" name="ride">
 								<div class="username">
-									From<input type="text" placeholder="Select Destination">
+									From<input type="text" name="source" placeholder="Select Destination">
 								</div>
 								<div class="username">
-									To<input type="text" placeholder="Select Destination">
+									To<input type="text" name="destination" placeholder="Select Destination">
                                 </div>
 
 
@@ -252,20 +255,18 @@
 
 
                                 <div class="name">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                Date<input type="text" placeholder="dd - mm - yyyy">
-                                            </div>
-                                            <div class="col-md-6">
-                                                Time<input type="text" placeholder="00 : 00  (24 hrs)">
-                                            </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Date<input type="text" name="date" placeholder="yyyy - mm - dd">
                                         </div>
-                                    </div>  
+                                        <div class="col-md-6">
+                                            Time<input type="text" name="time" placeholder="00 : 00 : 00">
+                                        </div>
+                                    </div>
+                                </div>  
 
 
 <!--________________________________________________________________________________________________________________________________-->
-
-
 
                                 
                                 <!-- <div class="name">Payment Method
@@ -311,8 +312,9 @@
                                 </div> -->
 								
 								<div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Book Now</button>
-								</div>
+                                <button type="submit" name="SUBMIT" value="SUBMIT" onClick="return validation();">
+									<i class="fa fa-check-square"></i> Book Now</button>								
+                                </div>
 							</form>
                 		</div>
                 	</div>		
@@ -598,3 +600,33 @@
 </body>
 
 </html>
+
+
+
+
+<!--__________________________________________________________________________________________________________________________________-->
+<!--__________________________________________________________________________________________________________________________________-->
+
+
+
+
+        <?php
+            $con = mysqli_connect("localhost","root","","cargo");
+            if(isset($_POST['SUBMIT'])) 
+            { 
+                $source = $_POST['source'];
+                $destination = $_POST['destination'];
+                $date = $_POST['date'];
+                $time = $_POST['time'];
+                $qry = "INSERT INTO ride (source, destination, datee, timee) 
+                        VALUES ('".$source."' , '".$destination."' , '".$date."' , '".$time."')";
+                mysqli_query($con, $qry);
+            }
+            mysqli_close($con);
+        ?>
+
+
+
+
+<!--__________________________________________________________________________________________________________________________________-->
+<!--__________________________________________________________________________________________________________________________________-->
