@@ -373,7 +373,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                         Time<select name="hours">
                                             <option default>Hours</option>
                                             <option value="00">00</option>
