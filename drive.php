@@ -312,25 +312,25 @@
                                             <option value="2048">2048</option>
                                             <option value="2049">2049</option>
                                             <option value="2050">2050</option>
-                                            
+
                                             </select>                                
                                         </div>
 
                                         <div class="col-md-4">
                                         .<select name=month>
                                             <option default>Month</option>
-                                            <option value="January">January</option>
-                                            <option value="February">February</option>
-                                            <option value="March">March</option>
-                                            <option value="April">April</option>
-                                            <option value="May">May</option>
-                                            <option value="June">June</option>
-                                            <option value="July">July</option>
-                                            <option value="August">August</option>
-                                            <option value="September">September</option>
-                                            <option value="October">October</option>
-                                            <option value="November">November</option>
-                                            <option value="December">December</option>
+                                            <option value="01">January</option>
+                                            <option value="02">February</option>
+                                            <option value="03">March</option>
+                                            <option value="04">April</option>
+                                            <option value="05">May</option>
+                                            <option value="06">June</option>
+                                            <option value="07">July</option>
+                                            <option value="08">August</option>
+                                            <option value="09">September</option>
+                                            <option value="10">October</option>
+                                            <option value="11">November</option>
+                                            <option value="12">December</option>
                                             </select>                                  
                                         </div>
 
@@ -374,8 +374,10 @@
 
                                     <div class="row">
                                         <div class="col-md-4">
-                                        Time<select name="Hours">
+                                        Time<select name="hours">
                                             <option default>Hours</option>
+                                            <option value="00">00</option>
+
                                             <option value="01">01</option>
                                             <option value="02">02</option>
                                             <option value="03">03</option>
@@ -388,27 +390,47 @@
                                             <option value="10">10</option>
                                             <option value="11">11</option>
                                             <option value="12">12</option>
-                                        </select>
-                                    </div>
 
-                                    <div class="col-md-4">
-                                        .<select name="Minutes">
-                                            <option default>Minutes</option>
-                                            <option value="10">10</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
                                             <option value="20">20</option>
-                                            <option value="30">30</option>
-                                            <option value="40">40</option>
-                                            <option value="50">50</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            
                                         </select>
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
+                                        .<select name="minutes">
+                                            <option default>Minutes</option>
+                                            <option value="00">00</option>
+                                            <option value="05">05</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="25">25</option>
+                                            <option value="30">30</option>
+                                            <option value="35">35</option>
+                                            <option value="40">40</option>
+                                            <option value="45">45</option>
+                                            <option value="50">50</option>
+                                            <option value="55">55</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- <div class="col-md-4">
                                         .<select name="AM/PM">
                                             <option default>AM/PM</option>
                                             <option value="AM">AM</option>
                                             <option value="PM">PM</option>
                                         </select>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 
@@ -757,9 +779,19 @@
             { 
                 $source = $_POST['source'];
                 $destination = $_POST['destination'];
-                $date = $_POST['date'];
-                $time = $_POST['time'];
+                
+                $year = $_POST['year'];
+                $month = $_POST['month'];
+                $day = $_POST['day'];
+                $date = $year."-".$month."-".$day;
+
+                $hours = $_POST['hours'];
+                $minutes = $_POST['minutes'];
+                $seconds = 00;
+                $time = $hours.":".$minutes.":".$seconds;
+
                 $vehicle = $_POST['vehicle'];
+
                 $qry = "INSERT INTO trip (source, destination, datee, timee, vehicle) 
                         VALUES ('".$source."' , '".$destination."' , '".$date."' , '".$time."' , '".$vehicle."')";
                 mysqli_query($con, $qry);
