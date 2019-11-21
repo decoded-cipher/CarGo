@@ -234,82 +234,57 @@
                 	<div class="xlogin-page-content">
                 		<div class="login-form">
                 			<h3>Have a drive!</h3>
-							<form>
-								<div class="username">
-									From<input type="text" placeholder="Select Destination">
+                            
+                            
+                            <form method="POST" action="" name="trip">
+                            	<div class="username">
+									From<input type="text" name="source" placeholder="Select Destination">
 								</div>
 								<div class="username">
-									To<input type="text" placeholder="Select Destination">
+									To<input type="text" name="destination" placeholder="Select Destination">
                                 </div>
                                 
-
 <!--________________________________________________________________________________________________________________________________-->
-
                                 
                                 <div class="name">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                Date<input type="text" placeholder="dd - mm - yyyy">
+                                                Date<input type="text" name="date" placeholder="yyyy - mm - dd">
                                             </div>
                                             <div class="col-md-6">
-                                                Time<input type="text" placeholder="00 : 00  (24 hrs)">
+                                                Time<input type="text" name="time" placeholder="00 : 00 : 00">
                                             </div>
                                         </div>
                                     </div>  
-
 
 <!--________________________________________________________________________________________________________________________________-->
-
-
-
-
-
-
-                                    
-<!--
-                                    <div class="">
-                                        <div class="row">
-                                            <div class="pick-date bookinput-item col-md-5">
-                                                <input id="startDate2" placeholder="Pick Date" />
-                                            </div>
-        
-                                            <div class="retern-date bookinput-item col-md-5">
-                                                <input id="timepicker" placeholder="Pick Time" />
-                                            </div>
-                                        </div>
-                                    </div>  
-  -->                                  
-
-
-
-
 
                                 <div class="name">Select Vehicle
                                     <div class="row vehicle">
                                         <div class="col-md-3">
                                             <label>
-                                                <input type="radio" name="test" value="small">
+                                                <input type="radio" name="vehicle" value="scooter">
                                                 <img class="img-responsive img-circle" src="assets\img\Ride\01.png">Scooter
                                             </label>
                                         </div>
 
                                         <div class="col-md-3">
                                             <label>
-                                                    <input type="radio" name="test" value="small">
+                                                    <input type="radio" name="vehicle" value="suv">
                                                     <img class="img-responsive img-circle" src="assets\img\Ride\02.png">SUV
                                             </label>                                        
                                         </div>
 
                                         <div class="col-md-3">
                                             <label>
-                                                    <input type="radio" name="test" value="small">
+                                                    <input type="radio" name="vehicle" value="sedan">
                                                     <img class="img-responsive img-circle" src="assets\img\Ride\03.png">Sedan
                                             </label>                                        
                                         </div>
 
                                         <div class="col-md-3">
                                             <label>
-                                                    <input type="radio" name="test" value="small">
+                                                    <input type="radio" name="vehicle" value="mpv">
                                                     <img class="img-responsive img-circle" src="assets\img\Ride\04.png">MPV
                                             </label>                                        
                                         </div>
@@ -317,7 +292,8 @@
                                 </div>
 								
 								<div class="log-btn">
-									<button type="submit"><i class="fa fa-check-square"></i> Book Now</button>
+                                    <button type="submit" name="SUBMIT" value="SUBMIT" onClick="return validation();">
+									    <i class="fa fa-check-square"></i> Book Now</button>
 								</div>
 							</form>
                 		</div>
@@ -608,3 +584,34 @@
 </body>
 
 </html>
+
+
+
+
+<!--__________________________________________________________________________________________________________________________________-->
+<!--__________________________________________________________________________________________________________________________________-->
+
+
+
+
+        <?php
+            $con = mysqli_connect("localhost","root","","cargo");
+            if(isset($_POST['SUBMIT'])) 
+            { 
+                $source = $_POST['source'];
+                $destination = $_POST['destination'];
+                $date = $_POST['date'];
+                $time = $_POST['time'];
+                $vehicle = $_POST['vehicle'];
+                $qry = "INSERT INTO trip (source, destination, datee, timee, vehicle) 
+                        VALUES ('".$source."' , '".$destination."' , '".$date."' , '".$time."' , '".$vehicle."')";
+                mysqli_query($con, $qry);
+            }
+            mysqli_close($con);
+        ?>
+
+
+
+
+<!--__________________________________________________________________________________________________________________________________-->
+<!--__________________________________________________________________________________________________________________________________-->
