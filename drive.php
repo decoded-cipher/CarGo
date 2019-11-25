@@ -250,10 +250,10 @@
                             
                             <form method="POST" action="" name="trip">
                             	<div class="username">
-									From<input type="text" name="source" placeholder="Enter Source Location" required>
+									From<input type="text" id="source" name="source" placeholder="Enter Source Location" required>
 								</div>
 								<div class="username">
-									To<input type="text" name="destination" placeholder="Enter Destination" required>
+									To<input type="text" id="destination" name="destination" placeholder="Enter Destination" required>
                                 </div>
                                 
 <!--________________________________________________________________________________________________________________________________-->
@@ -276,8 +276,8 @@
                                 <div class="name">
                                     <div class="row">
                                         <div class="col-md-4">
-                                        Date<select name="year">
-                                            <option default>Year</option>
+                                        Date<select name="year" id="year">
+                                            <option value="x">Year</option>
                                             <option value="2019">2019</option>
                                             <option value="2020">2020</option>
                                             <option value="2021">2021</option>
@@ -317,8 +317,8 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                        .<select name=month>
-                                            <option default>Month</option>
+                                        .<select name=month id="month">
+                                            <option value="x">Month</option>
                                             <option value="01">January</option>
                                             <option value="02">February</option>
                                             <option value="03">March</option>
@@ -335,8 +335,8 @@
                                         </div>
 
                                         <div class="col-md-4">
-                                        .<select name="day">
-                                            <option default>Day</option>
+                                        .<select name="day" id="day">
+                                            <option value="x">Day</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
                                             <option value="03">03</option>
@@ -374,8 +374,8 @@
 
                                     <div class="row">
                                         <div class="col-md-6">
-                                        Time<select name="hours">
-                                            <option default>Hours</option>
+                                        Time<select name="hours" id="hours">
+                                            <option value="x">Hours</option>
                                             <option value="00">00</option>
 
                                             <option value="01">01</option>
@@ -407,8 +407,8 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        .<select name="minutes">
-                                            <option default>Minutes</option>
+                                        .<select name="minutes" id="minutes">
+                                            <option value="x">Minutes</option>
                                             <option value="00">00</option>
                                             <option value="05">05</option>
                                             <option value="10">10</option>
@@ -423,14 +423,6 @@
                                             <option value="55">55</option>
                                         </select>
                                     </div>
-
-                                    <!-- <div class="col-md-4">
-                                        .<select name="AM/PM">
-                                            <option default>AM/PM</option>
-                                            <option value="AM">AM</option>
-                                            <option value="PM">PM</option>
-                                        </select>
-                                        </div> -->
                                     </div>
                                 </div>
 
@@ -482,135 +474,6 @@
         </div>
     </section>
     <!--== Login Page Content End ==-->
-
-
-
-
-
-<!--________________________________________________________________________________________________________________________________-->
-
-
-
-
-
-
-        <!-- The Modal -->
-        <div class="xsframe">
-            <div id="myModal" class="xsmodal">
-                <form method="post" action="" id="verifyform">
-                    <!-- Modal content -->
-                    <div class="xsmodal-content">
-                        <span class="xsclose">&times;</span>
-                        <br>
-
-                        <div class="driver_details" style="display: inline-block; text-align: center">
-                            <img style="margin-left: 30px" src="assets/img/img_avatar_1.png" width="150px" height="150px">
-                        </div>
-                            <h4 style="margin: 20px 0px 5px 0px;
-                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-                                ARJUN KRISHNA</h4>
-                            <h6 style="color: gray;">+91 9400057152<h6>
-                            <h6 style="color: gray;">arjun12345krishna@gmail.com</h6><br>
-
-                            <div class="route">
-                                <div class="from"><p>Source: Kottayam</p></div>
-                                <div class="to"><p>Destination: Kochi</p></div>
-                                <div class="time"><h6 style="color: gray;">Time:  16:00</h6></div>
-                            </div>
-                            
-                            <div class="book" style="">
-                                <button type="submit">BOOK</button>
-                            </div>
-
-                            <div class="abc" style="float=right;">
-                                <button type="submit">Previous</button>
-                                <button type="submit" style="margin: 0px 0px 0px 15px;">Next</button>
-                            </div>
-                                
-
-                           
-                        
-                        <!-- <div style="text-align: center">
-                            An OTP was sent to your mobile number.<br>Enter OTP to complete User Registration.
-                            
-                            <div class="xextra">
-                                <input type="text" placeholder="Enter OTP">
-                            </div>                
-                        </div>
-                        <button class="xmbutton" id="verifybtn">Book Carpool</button>
-                        <small> Didn't receive OTP?
-                            <a href="#">Resend</a> OTP.
-                        </small>-->
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        
-
-
-
-
-        <script>
-                // Get the modal
-                var modal = document.getElementById('myModal');
-                var modal2= document.getElementById('invalidOTP');
-                
-                // // Get the button that opens the modal
-                // var btn = document.getElementById("myBtn");
-                
-                // Get the <span> element that closes the modal
-                var span = document.getElementsByClassName("xsclose")[0];
-                var span2= document.getElementsByClassName("xsclose")[1];
-                
-                // // When the user clicks the button, open the modal
-                // btn.onclick = function () {
-                //     modal.style.display = "block";
-                // }
-                
-                // When the user clicks on <span> (x), close the modal
-                span.onclick = function () {
-                    modal.style.display = "none ";
-                }
-                span2.onclick = function () {
-                    modal2.style.display = "none ";
-                }
-                
-                // // When the user clicks anywhere outside of the modal, close it
-                // window.onclick = function(event) {
-                //     if (event.target == modal) {
-                //         modal.style.display = "none ";
-                //     }
-                // }
-                document.getElementById('otpfrm').addEventListener('submit', showotp)
-                document.getElementById('verifyform').addEventListener('submit', invalidotp)
-                document.getElementById('resendbtn').addEventListener('click', resendotp)
-                
-                
-                function showotp(e) {
-                    e.preventDefault()
-                    document.getElementById('myModal').style.display='block'
-                    return false;
-                }
-                function invalidotp(e) {
-                    e.preventDefault()
-                    document.getElementById('myModal').style.display='none'
-                    document.getElementById('invalidOTP').style.display='block'
-                    return false;
-                }
-                function resendotp(e) {
-                    e.preventDefault()
-                    document.getElementById('invalidOTP').style.display='none'
-                    document.getElementById('myModal').style.display='block'
-                    return false;
-                }
-                
-                </script>
-                
-
-
-
-
 
 
 
@@ -723,6 +586,15 @@
         </section>
     <!--== Footer Area End ==-->
 
+
+
+
+<!--____________________________________________________________________________________________________________________________________________-->
+
+
+
+
+
     <!--== Scroll Top Area Start ==-->
     <div class="scroll-top">
         <img src="assets/img/scroll-top.png" alt="JSOFT">
@@ -804,3 +676,42 @@
 
 <!--__________________________________________________________________________________________________________________________________-->
 <!--__________________________________________________________________________________________________________________________________-->
+
+
+
+
+
+
+            <script type ="text/javascript" language="javascript">
+                function validation()
+                {
+                    var year = document.forms["trip"]["year"];
+                    var month = document.forms["trip"]["month"];
+                    var day = document.forms["trip"]["day"];
+                    var hours = document.forms["trip"]["hours"];
+                    var minutes = document.forms["trip"]["minutes"];
+                    var vehicle = document.forms["trip"]["vehicle"];
+
+                    
+                    if(year.value == "")
+                    {
+                        var e = document.getElementById("year");
+                        var strUser = e.options[e.selectedIndex].text;
+                        if(strUser==x)
+                        {
+                            alert("Please select a Year");
+                        }
+                    }
+                    
+                    else
+                    return true;
+                }
+            </script>
+
+
+
+
+
+<!--__________________________________________________________________________________________________________________________________-->
+<!--__________________________________________________________________________________________________________________________________-->
+
