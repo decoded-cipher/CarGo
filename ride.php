@@ -30,10 +30,7 @@
     <link href="assets/css/responsive.css" rel="stylesheet">
 
 
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
     <style>
         .ride-result{
             color: gray;
@@ -170,42 +167,11 @@
                         <div class="col-lg-8 d-none d-xl-block">
                             <nav class="mainmenu alignright">
                                 <ul>
-                                    <li><a href="#">OVERVIEW</a>
-                                        <!--    <ul>
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index2.html">Home 2</a></li>
-                                            <li><a href="index3.html">Home 3</a></li>
-                                        </ul>   -->
-                                    </li>
+                                    <li><a href="#">OVERVIEW</a></li>
                                     <li><a href="drive.html">TO DRIVE</a></li>
                                     <li class="active"><a href="ride.html">FOR RIDE</a></li>
-                                    <!--    <li><a href="#">Cars</a>
-                                        <ul>
-                                            <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
-                                            <li><a href="car-right-sidebar.html">Car Right Sidebar</a></li>
-                                            <li><a href="car-without-sidebar.html">Car Without Sidebar</a></li>
-                                            <li><a href="car-details.html">Car Details</a></li>
-                                        </ul>
-                                    </li>   -->
-                                    <!--    <li><a href="index.html">Pages</a>
-                                        <ul>
-                                            <li><a href="package.html">Pricing</a></li>
-                                            <li><a href="driver.html">Driver</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="help-desk.html">Help Desk</a></li>
-                                            <li><a href="login.html">Log In</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
-                                    </li>   -->
-                                    <li><a href="main.html">NOTIFICATION</a>
-                                    <li><a href="main.html">FAQ</a>
-                                        <!--    <ul>
-                                            <li><a href="article.html">Blog Page</a></li>
-                                            <li><a href="article-details.html">Blog Details</a></li>
-                                        </ul>   -->
-                                    </li>
+                                    <li><a href="main.html">NOTIFICATION</a></li>
+                                    <li><a href="main.html">FAQ</a></li>
                                     <li><a href="login.html">Log OUT</a></li>
     
                                 </ul>
@@ -266,20 +232,7 @@
 <!--________________________________________________________________________________________________________________________________-->
 
 
-                                <!-- <div class="name">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            Date<input type="text" name="date" placeholder="yyyy - mm - dd">
-                                        </div>
-                                        <div class="col-md-6">
-                                            Time<input type="text" name="time" placeholder="00 : 00 : 00">
-                                        </div>
-                                    </div>
-                                </div>   -->
-
-
-                                <!--________________________________________________________________________________________________________________________________-->
-
+                                
                                 <div class="name">
                                     <div class="row">
                                         <div class="col-md-4">
@@ -429,64 +382,10 @@
                                             <option value="50">50</option>
                                             <option value="55">55</option>
                                         </select>
-                                    </div>
-
-                                    <!-- <div class="col-md-4">
-                                        .<select name="AM/PM">
-                                            <option default>AM/PM</option>
-                                            <option value="AM">AM</option>
-                                            <option value="PM">PM</option>
-                                        </select>
-                                        </div> -->
+                                        </div>
                                     </div>
                                 </div>
-
-
-<!--________________________________________________________________________________________________________________________________-->
-
                                 
-                                <!-- <div class="name">Payment Method
-                                    <div class="row payment">                                               
-                                            <input type="radio" id="radioApple" name="radioFruit" value="apple">
-                                            <label for="radioApple">By Cash</label>
-                                        
-                                            <input type="radio" id="radioBanana" name="radioFruit" value="banana">
-                                            <label for="radioBanana">Digital Wallet</label>
-                                    </div>
-                                </div>
-
-                                <div class="name">Select Vehicle
-                                    <div class="row vehicle">
-                                        <div class="col-md-3">
-                                            <label>
-                                                <input type="radio" name="test" value="small">
-                                                <img class="img-responsive img-circle" src="assets\img\Ride\01.png">Scooter
-                                            </label>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <label>
-                                                    <input type="radio" name="test" value="small">
-                                                    <img class="img-responsive img-circle" src="assets\img\Ride\02.png">SUV
-                                            </label>                                        
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <label>
-                                                    <input type="radio" name="test" value="small">
-                                                    <img class="img-responsive img-circle" src="assets\img\Ride\03.png">Sedan
-                                            </label>                                        
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <label>
-                                                    <input type="radio" name="test" value="small">
-                                                    <img class="img-responsive img-circle" src="assets\img\Ride\04.png">MPV
-                                            </label>                                        
-                                        </div>
-                                    </div>
-                                </div> -->
-								
 								<div class="log-btn">
                                 <button type="submit" name="SUBMIT" value="SUBMIT" onClick="return validation();">
 									<i class="fa fa-check-square"></i> Book Now</button>								
