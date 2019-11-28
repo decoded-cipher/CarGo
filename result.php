@@ -30,10 +30,7 @@
     <link href="assets/css/responsive.css" rel="stylesheet">
 
 
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
     <style>
         .ride-result{
             color: gray;
@@ -170,43 +167,12 @@
                         <div class="col-lg-8 d-none d-xl-block">
                             <nav class="mainmenu alignright">
                                 <ul>
-                                    <li><a href="#">OVERVIEW</a>
-                                        <!--    <ul>
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index2.html">Home 2</a></li>
-                                            <li><a href="index3.html">Home 3</a></li>
-                                        </ul>   -->
-                                    </li>
-                                    <li><a href="drive.html">TO DRIVE</a></li>
-                                    <li class="active"><a href="ride.html">FOR RIDE</a></li>
-                                    <!--    <li><a href="#">Cars</a>
-                                        <ul>
-                                            <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
-                                            <li><a href="car-right-sidebar.html">Car Right Sidebar</a></li>
-                                            <li><a href="car-without-sidebar.html">Car Without Sidebar</a></li>
-                                            <li><a href="car-details.html">Car Details</a></li>
-                                        </ul>
-                                    </li>   -->
-                                    <!--    <li><a href="index.html">Pages</a>
-                                        <ul>
-                                            <li><a href="package.html">Pricing</a></li>
-                                            <li><a href="driver.html">Driver</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="help-desk.html">Help Desk</a></li>
-                                            <li><a href="login.html">Log In</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
-                                    </li>   -->
-                                    <li><a href="main.html">NOTIFICATION</a>
-                                    <li><a href="main.html">FAQ</a>
-                                        <!--    <ul>
-                                            <li><a href="article.html">Blog Page</a></li>
-                                            <li><a href="article-details.html">Blog Details</a></li>
-                                        </ul>   -->
-                                    </li>
-                                    <li><a href="login.html">Log OUT</a></li>
+                                    <li><a href="#">OVERVIEW</a></li>
+                                    <li><a href="drive.php">TO DRIVE</a></li>
+                                    <li class="active"><a href="ride.php">FOR RIDE</a></li>
+                                    <li><a href="notification.php">NOTIFICATION</a></li>
+                                    <li><a href="main.html">FAQ</a></li>
+                                    <li><a href="login.php">Log OUT</a></li>
     
                                 </ul>
                             </nav>
@@ -271,96 +237,18 @@
                                         <div class="col-md-4">
                                         Date<select name="year">
                                             <option default>Year</option>
-                                            <option value="2019">2019</option>
-                                            <option value="2020">2020</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2025">2025</option>
-                                            <option value="2026">2026</option>
-                                            <option value="2027">2027</option>
-                                            <option value="2028">2028</option>
-                                            <option value="2029">2029</option>
-                                            <option value="2030">2030</option>
-
-                                            <option value="2031">2031</option>
-                                            <option value="2032">2032</option>
-                                            <option value="2033">2033</option>
-                                            <option value="2034">2034</option>
-                                            <option value="2035">2035</option>
-                                            <option value="2036">2036</option>
-                                            <option value="2037">2037</option>
-                                            <option value="2038">2038</option>
-                                            <option value="2039">2039</option>
-                                            <option value="2040">2040</option>
-
-                                            <option value="2041">2041</option>
-                                            <option value="2042">2042</option>
-                                            <option value="2043">2043</option>
-                                            <option value="2044">2044</option>
-                                            <option value="2045">2045</option>
-                                            <option value="2046">2046</option>
-                                            <option value="2047">2047</option>
-                                            <option value="2048">2048</option>
-                                            <option value="2049">2049</option>
-                                            <option value="2050">2050</option>
-                                            
-                                            </select>                                
-                                        </div>
-
-                                        <div class="col-md-4">
-                                        .<select name=month>
-                                            <option default>Month</option>
-                                            <option value="01">January</option>
-                                            <option value="02">February</option>
-                                            <option value="03">March</option>
-                                            <option value="04">April</option>
-                                            <option value="05">May</option>
-                                            <option value="06">June</option>
-                                            <option value="07">July</option>
-                                            <option value="08">August</option>
-                                            <option value="09">September</option>
-                                            <option value="10">October</option>
-                                            <option value="11">November</option>
-                                            <option value="12">December</option>
                                             </select>                                  
                                         </div>
-
+                                        <div class="col-md-4">
+                                        
+                                        .<select name=month>
+                                            <option default>Month</option>
+                                            </select>                                  
+                                        </div>
+                                        
                                         <div class="col-md-4">
                                         .<select name="day">
                                             <option default>Day</option>
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                            <option value="24">24</option>
-                                            <option value="25">25</option>
-                                            <option value="26">26</option>
-                                            <option value="27">27</option>
-                                            <option value="28">28</option>
-                                            <option value="29">29</option>
-                                            <option value="30">30</option>
-                                            <option value="31">31</option>
                                             </select>                                  
                                         </div>
                                     </div>
@@ -369,56 +257,16 @@
                                         <div class="col-md-6">
                                         Time<select name="hours">
                                             <option default>Hours</option>
-                                            <option value="00">00</option>
-
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                            
-                                        </select>
+                                            </select>
                                     </div>
-
                                     <div class="col-md-6">
-                                        .<select name="minutes">
-                                            <option default>Minutes</option>
-                                            <option value="00">00</option>
-                                            <option value="05">05</option>
-                                            <option value="10">10</option>
-                                            <option value="15">15</option>
-                                            <option value="20">20</option>
-                                            <option value="25">25</option>
-                                            <option value="30">30</option>
-                                            <option value="35">35</option>
-                                            <option value="40">40</option>
-                                            <option value="45">45</option>
-                                            <option value="50">50</option>
-                                            <option value="55">55</option>
-                                        </select>
+                                        .<select name="day">
+                                            <option default>Day</option>
+                                        </select>                                  
                                     </div>
-
                                     </div>
                                 </div>
+
 
 
 								<div class="log-btn">
@@ -436,9 +284,20 @@
 
 
 
-<!--________________________________________________________________________________________________________________________________-->
+    <!--________________________________________________________________________________________________________________________________-->
 
 
+
+        <?php
+            $con = mysqli_connect("localhost","root","","cargo");
+            $result = mysqli_query($con,"SELECT * FROM trip, ride WHERE trip.source = ride.source, 
+                                    trip.destination = ride.destination, trip.datee = ride.datee, trip.timee = ride.timee");
+            while($row = mysqli_fetch_array($result))
+        ?>
+
+
+
+    <!--________________________________________________________________________________________________________________________________-->
 
 
         <!-- The Modal -->
@@ -454,19 +313,28 @@
                             <img style="margin-left: 30px" src="assets/img/img_avatar_2.png" width="150px" height="150px">
                         </div>
                             <h4 style="margin: 20px 0px 5px 0px;
-                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+                                'Open Sans', 'Helvetica Neue', sans-serif;">
                                 ANIMA KRISHNA</h4>
                             <h6 style="color: gray;">+91 6282737428<h6>
                             <h6 style="color: gray;">unnielava@gmail.com</h6><br>
 
+
                             <div class="route">
-                                <div class="from"><p>Source: Wayanad</p></div>
-                                <div class="to"><p>Destination: Palakkad</p></div>
-                                <div class="time"><h6 style="color: gray;">Time:  08:00</h6></div>
+                                <div class="from">
+                                    <p>Source: <?php echo $row['source'];?></p>
+                                </div>
+                                <div class="to">
+                                    <p>Destination: <?php echo $row['destination'];?></p>
+                                </div>
+                                <div class="time">
+                                    <h6 style="color: gray;">Time: <?php echo $row['timee'];?></h6>
+                                </div>
                             </div>
                             
+                            
                             <div class="book" style="">
-                                <button type="submit">BOOK</button>
+                                <button type="submit">JOIN NOW</button>
                             </div>
 
                             <div class="abc" style="float=right;">
@@ -474,27 +342,10 @@
                                 <button type="submit" style="margin: 0px 0px 0px 15px;">Next</button>
                             </div>
                                 
-
-                           
-                        
-                        <!-- <div style="text-align: center">
-                            An OTP was sent to your mobile number.<br>Enter OTP to complete User Registration.
-                            
-                            <div class="xextra">
-                                <input type="text" placeholder="Enter OTP">
-                            </div>                
-                        </div>
-                        <button class="xmbutton" id="verifybtn">Book Carpool</button>
-                        <small> Didn't receive OTP?
-                            <a href="#">Resend</a> OTP.
-                        </small>-->
                     </div>
                 </form>
             </div>
         </div>
-
-        
-
 
 
 
@@ -554,11 +405,6 @@
                 
                 </script>
                 
-
-
-
-
-
 
 
 <!--________________________________________________________________________________________________________________________________-->
@@ -711,3 +557,11 @@
 
 </html>
 
+
+    <!--________________________________________________________________________________________________________________________________-->
+    <!--________________________________________________________________________________________________________________________________-->
+
+
+
+
+        
