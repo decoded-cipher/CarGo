@@ -29,22 +29,7 @@
         <!--=== Responsive CSS ===-->
         <link href="assets/css/responsive.css" rel="stylesheet">
 
-
-        <!--[if lt IE 9]>
-            <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-
-
-
-
-
         
-
-
-
-
     </head>
 
     <body class="loader-active">
@@ -127,44 +112,13 @@
                             <div class="col-lg-8 d-none d-xl-block">
                                 <nav class="mainmenu alignright">
                                     <ul>
-                                        <li class="active"><a href="#">Home</a>
-                                            <!--    <ul>
-                                                <li><a href="index.html">Home 1</a></li>
-                                                <li><a href="index2.html">Home 2</a></li>
-                                                <li><a href="index3.html">Home 3</a></li>
-                                            </ul>   -->
-                                        </li>
+                                        <li class="active"><a href="#">Home</a></li>
                                         <li><a href="main.html">About</a></li>
                                         <li><a href="main.html">Features</a></li>
-                                        <!--    <li><a href="#">Cars</a>
-                                            <ul>
-                                                <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
-                                                <li><a href="car-right-sidebar.html">Car Right Sidebar</a></li>
-                                                <li><a href="car-without-sidebar.html">Car Without Sidebar</a></li>
-                                                <li><a href="car-details.html">Car Details</a></li>
-                                            </ul>
-                                        </li>   -->
-                                        <!--    <li><a href="index.html">Pages</a>
-                                            <ul>
-                                                <li><a href="package.html">Pricing</a></li>
-                                                <li><a href="driver.html">Driver</a></li>
-                                                <li><a href="faq.html">FAQ</a></li>
-                                                <li><a href="gallery.html">Gallery</a></li>
-                                                <li><a href="help-desk.html">Help Desk</a></li>
-                                                <li><a href="login.html">Log In</a></li>
-                                                <li><a href="register.html">Register</a></li>
-                                                <li><a href="404.html">404</a></li>
-                                            </ul>
-                                        </li>   -->
-                                        <li><a href="main.html">Team</a>
-                                        <li><a href="main.html">Blog</a>
-                                            <!--    <ul>
-                                                <li><a href="article.html">Blog Page</a></li>
-                                                <li><a href="article-details.html">Blog Details</a></li>
-                                            </ul>   -->
-                                        </li>
+                                        <li><a href="main.html">Team</a></li>
+                                        <li><a href="main.html">Blog</a></li>
                                         <li><a href="main.html">Contact</a></li>
-                                        <li><a href="login.html">Log In</a></li>
+                                        <li><a href="login.php">Log In</a></li>
         
                                     </ul>
                                 </nav>
@@ -243,13 +197,14 @@
                                 </form>
                             </div>
                             
-                            <div class="login-other">
+                            <!-- <div class="login-other">
                                 <span class="or">or</span>
                                 <a href="#" class="login-with-btn facebook"><i class="fa fa-facebook"></i> Signup With Facebook</a>
                                 <a href="#" class="login-with-btn google"><i class="fa fa-google"></i> Signup With Google</a>
-                            </div>
+                            </div> -->
+                            
                             <div class="create-ac">
-                                <p>Have an account? <a href="login.html">Sign In</a></p>
+                                <p>Have an account? <a href="login.php">Sign In</a></p>
                             </div>
                             <div class="login-menu">
                                 <a href="main.html">About</a>
@@ -276,7 +231,7 @@
                 <!-- Modal content -->
                 <div class="smodal-content">
                     <span class="sclose">&times;</span>
-                    <br>
+                    <br>    
 
                     <div style="display: inline-block;text-align: center">
                         <img style="margin-left: 50px" src="assets/img/mobile.png" width="150px" height="150px">
@@ -559,7 +514,7 @@
 
 
 
-<script type ="text/javascript" language="javascript">
+        <script type ="text/javascript" language="javascript">
             function validation()
             {
                 var first_name = document.forms["signup"]["first_name"];
