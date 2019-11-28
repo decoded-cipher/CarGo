@@ -29,14 +29,9 @@
     <!--=== Responsive CSS ===-->
     <link href="assets/css/responsive.css" rel="stylesheet">
 
-
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
-<body class="loader-active">
+    <body class="loader-active">
 
     <!--== Preloader Area Start ==-->
     <div class="preloader">
@@ -116,44 +111,13 @@
                         <div class="col-lg-8 d-none d-xl-block">
                             <nav class="mainmenu alignright">
                                 <ul>
-                                    <li class="active"><a href="#">Home</a>
-                                        <!--    <ul>
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index2.html">Home 2</a></li>
-                                            <li><a href="index3.html">Home 3</a></li>
-                                        </ul>   -->
-                                    </li>
+                                    <li class="active"><a href="#">Home</a></li>
                                     <li><a href="main.html">About</a></li>
                                     <li><a href="main.html">Features</a></li>
-                                    <!--    <li><a href="#">Cars</a>
-                                        <ul>
-                                            <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
-                                            <li><a href="car-right-sidebar.html">Car Right Sidebar</a></li>
-                                            <li><a href="car-without-sidebar.html">Car Without Sidebar</a></li>
-                                            <li><a href="car-details.html">Car Details</a></li>
-                                        </ul>
-                                    </li>   -->
-                                    <!--    <li><a href="index.html">Pages</a>
-                                        <ul>
-                                            <li><a href="package.html">Pricing</a></li>
-                                            <li><a href="driver.html">Driver</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="help-desk.html">Help Desk</a></li>
-                                            <li><a href="login.html">Log In</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
-                                    </li>   -->
-                                    <li><a href="main.html">Team</a>
-                                    <li><a href="main.html">Blog</a>
-                                        <!--    <ul>
-                                            <li><a href="article.html">Blog Page</a></li>
-                                            <li><a href="article-details.html">Blog Details</a></li>
-                                        </ul>   -->
-                                    </li>
+                                    <li><a href="main.html">Team</a></li>
+                                    <li><a href="main.html">Blog</a></li>
                                     <li><a href="main.html">Contact</a></li>
-                                    <li><a href="login.html">Log In</a></li>
+                                    <li><a href="login.php">Log In</a></li>
     
                                 </ul>
                             </nav>
@@ -213,13 +177,15 @@
                             </form>
                             
                 		</div>
-                		<div class="login-other">
+
+                		<!-- <div class="login-other">
                 			<span class="or">or</span>
                 			<a href="#" class="login-with-btn facebook"><i class="fa fa-facebook"></i> Login With Facebook</a>
                 			<a href="#" class="login-with-btn google"><i class="fa fa-google"></i> Login With Google</a>
-                		</div>
+                		</div> -->
+
                 		<div class="create-ac">
-                			<p>Don't have an account? <a href="register.html">Sign Up</a></p>
+                			<p>Don't have an account? <a href="register.php">Sign Up</a></p>
                 		</div>
                 		<div class="login-menu">
                 			<a href="main.html">About</a>
@@ -399,20 +365,25 @@
 
             if(isset($_POST['SUBMIT'])) 
             {
+                session_start();
+                // $user_id = $_POST['user_id'];
                 $username = $_POST['username'];
                 $passwrd = $_POST['passwrd'];
-                $qry = "SELECT username, passwrd FROM registration WHERE username='".$username."' AND passwrd='".$passwrd."' LIMIT 1";
-            //    $sql = "select email,password from regis where email='".$uname."' AND password='".$password."' limit 1";
+                $qry = "SELECT username, passwrd, user_id FROM registration WHERE username='".$username."' AND passwrd='".$passwrd."' LIMIT 1";
+
                 $result = mysqli_query($con, $qry);
                 if(mysqli_num_rows($result) ==1)
                 {
-                    header('location:drive.html');
+                    header('location:drive.php');
                 }
-                // else
-                // {
-                //     $msg="Invalid Details.";
-                //     echo $msg;
-                // }
+                while($r = mysqli_fetch_array($result))
+                {
+                    session_start();
+                    // $_SESSION['username'] = $r[0];
+                    $_SESSION['user_id'] = $r[2];
+
+                }
+                mysqli_close($con);
             }
         ?>
 
