@@ -30,10 +30,6 @@
     <link href="assets/css/responsive.css" rel="stylesheet">
 
 
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body class="loader-active">
@@ -165,43 +161,12 @@
                         <div class="col-lg-8 d-none d-xl-block">
                             <nav class="mainmenu alignright">
                                 <ul>
-                                    <li><a href="#">OVERVIEW</a>
-                                        <!--    <ul>
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index2.html">Home 2</a></li>
-                                            <li><a href="index3.html">Home 3</a></li>
-                                        </ul>   -->
-                                    </li>
-                                    <li class="active"><a href="drive.html">TO DRIVE</a></li>
-                                    <li><a href="ride.html">FOR RIDE</a></li>
-                                    <!--    <li><a href="#">Cars</a>
-                                        <ul>
-                                            <li><a href="car-left-sidebar.html">Car Left Sidebar</a></li>
-                                            <li><a href="car-right-sidebar.html">Car Right Sidebar</a></li>
-                                            <li><a href="car-without-sidebar.html">Car Without Sidebar</a></li>
-                                            <li><a href="car-details.html">Car Details</a></li>
-                                        </ul>   
-                                    </li>   -->
-                                    <!--    <li><a href="index.html">Pages</a>
-                                        <ul>
-                                            <li><a href="package.html">Pricing</a></li>
-                                            <li><a href="driver.html">Driver</a></li>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="help-desk.html">Help Desk</a></li>
-                                            <li><a href="login.html">Log In</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
-                                    </li>   -->
-                                    <li><a href="main.html">NOTIFICATION</a>
-                                    <li><a href="main.html">FAQ</a>
-                                        <!--    <ul>
-                                            <li><a href="article.html">Blog Page</a></li>
-                                            <li><a href="article-details.html">Blog Details</a></li>
-                                        </ul>   -->
-                                    </li>
-                                    <li><a href="login.html">Log OUT</a></li>
+                                    <li><a href="#">OVERVIEW</a></li>
+                                    <li class="active"><a href="drive.php">TO DRIVE</a></li>
+                                    <li><a href="ride.php">FOR RIDE</a></li>
+                                    <li><a href="notification.php">NOTIFICATION</a>
+                                    <li><a href="main.html">FAQ</a></li>
+                                    <li><a href="login.php">Log OUT</a></li>
     
                                 </ul>
                             </nav>
@@ -256,18 +221,7 @@
 									To<input type="text" id="destination" name="destination" placeholder="Enter Destination" required>
                                 </div>
                                 
-<!--________________________________________________________________________________________________________________________________-->
-                                
-                                <!-- <div class="name">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                Date<input type="text" name="date" placeholder="yyyy - mm - dd">
-                                            </div>
-                                            <div class="col-md-6">
-                                                Time<input type="text" name="time" placeholder="00 : 00 : 00">
-                                            </div>
-                                        </div>
-                                    </div>   -->
+
 
 <!--________________________________________________________________________________________________________________________________-->
 
@@ -430,6 +384,8 @@
 
 <!--________________________________________________________________________________________________________________________________-->
 
+
+
                                 <div class="name">Select Vehicle
                                     <div class="row vehicle">
                                         <div class="col-md-3">
@@ -478,7 +434,6 @@
 
 
     <!--__________________________________________________________________________________________________________________________________-->
-
 
 
 
@@ -649,6 +604,8 @@
             $con = mysqli_connect("localhost","root","","cargo");
             if(isset($_POST['SUBMIT'])) 
             { 
+                // $user_id =  $_SESSION['user_id'];
+                
                 $source = $_POST['source'];
                 $destination = $_POST['destination'];
                 
