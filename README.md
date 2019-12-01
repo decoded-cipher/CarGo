@@ -1,0 +1,7 @@
+CarGo – Online Pooling Services
+
+The project entitled "CarGo - Online Pooling Service" is an online vehicle pooling service, that help us to achieve a future of shared mobility. CarGo is an aggregator service and connects people who drive the way, with those who are interested in having a shared trip; thereby acting as interface between them. With its simple user-interface and efficient mode of operation, the website connects people travelling on same route and same time, and is sure to solve the problems of traffic congestion, increased transit time and helps in reducing air pollution due to CO2 emission by implementing shared trips.
+ 
+ The benefits of CarGo may get extended upto the removal of difficulties caused due to the tardy schedules & rush in public transport system, and high expense of taxi services for the ride takers. In the meantime, the system is providing someone to share the loneliness and fuel expenses of long distant drives for the person who's driving. This venture helps people to commute with verified users for secure and safe rides and to take away the stress and uncertainty of riding to work alone.
+
+In future, some chat interface would be introduced to empower the web application to the next level. Personalized dashboards with rating features, that are to be adjoined to the system in future, might help us to detect fraud and, to terminate such accounts. Making this website entirely cashless is also considered as one among our long-term goals.
