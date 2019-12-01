@@ -223,34 +223,10 @@
         <!--__________________________________________________________________________________________________________________________________-->
 
 
+<?php
+include_once 'modal-otp.php';
+?>
 
-        <!-- The Modal -->
-        <div class="sframe">
-        <div id="myModal" class="smodal">
-            <form method="post" action="" id="verifyform">
-                <!-- Modal content -->
-                <div class="smodal-content">
-                    <span class="sclose">&times;</span>
-                    <br>    
-
-                    <div style="display: inline-block;text-align: center">
-                        <img style="margin-left: 50px" src="assets/img/mobile.png" width="150px" height="150px">
-                    </div>
-                    <div style="text-align: center">
-                        An OTP was sent to your mobile number.<br>Enter OTP to complete User Registration.
-                        
-                        <div class="extra">
-                            <input type="text" placeholder="Enter OTP">
-                        </div>                
-                    </div>
-                    <button class="mbutton" id="verifybtn">Verfiy OTP</button>
-                    <small> Didn't receive OTP?
-                        <a href="#">Resend</a> OTP.
-                    </small>
-                </div>
-            </form>
-        </div>
-        </div>
 
     <!--
         <div id="invalidOTP" class="smodal">
@@ -304,9 +280,9 @@
         //         modal.style.display = "none ";
         //     }
         // }
-        document.getElementById('otpfrm').addEventListener('submit', showotp)
-        document.getElementById('verifyform').addEventListener('submit', invalidotp)
-        document.getElementById('resendbtn').addEventListener('click', resendotp)
+        // document.getElementById('otpfrm').addEventListener('submit', showotp)
+        // document.getElementById('verifyform').addEventListener('submit', invalidotp)
+        // document.getElementById('resendbtn').addEventListener('click', resendotp)
 
 
 /*        function showotp(e) {
@@ -314,18 +290,18 @@
             document.getElementById('myModal').style.display='block';
             return false;
         }*/
-        function invalidotp(e) {
-            e.preventDefault()
-            document.getElementById('myModal').style.display='none'
-            document.getElementById('invalidOTP').style.display='block'
-            return false;
-        }
-        function resendotp(e) {
-            e.preventDefault()
-            document.getElementById('invalidOTP').style.display='none'
-            document.getElementById('myModal').style.display='block'
-            return false;
-        }
+        // function invalidotp(e) {
+        //     e.preventDefault()
+        //     document.getElementById('myModal').style.display='none'
+        //     document.getElementById('invalidOTP').style.display='block'
+        //     return false;
+        // }
+        // function resendotp(e) {
+        //     e.preventDefault()
+        //     document.getElementById('invalidOTP').style.display='none'
+        //     document.getElementById('myModal').style.display='block'
+        //     return false;
+        //}
 
         </script>
 
@@ -489,7 +465,7 @@
 
 
         <?php
-            $con = mysqli_connect("localhost","root","","cargo");
+            require_once "model/db.php";
             if(isset($_POST['SUBMIT'])) 
             { 
                 $first_name = $_POST['first_name'];
@@ -501,8 +477,20 @@
                 $qry = "INSERT INTO registration (first_name, last_name, email, mobile, username, passwrd) 
                         VALUES ('".$first_name."' , '".$last_name."' , '".$email."' , '".$mobile."' , '".$username."' , '".$password."')";
                 mysqli_query($con, $qry);
+                $uid = mysqli_insert_id($con);
+                if($uid>0){
+                    $_SESSION['user_id'] =   $uid;
+                    $_SESSION['mobile'] =   $mobile;
+                    require_once 'send-otp.php';
+                    $res = send_otp($mobile);
+                 //   print_r($res);
+                    echo '<style> .smodal { display: block; } </style>';
+                }
+
             }
             mysqli_close($con);
+
+           // echo $_SESSION['otp'];
         ?>
 
 
@@ -590,6 +578,43 @@
                 else
                 return true;
             }
+
+            $("#verifybtn").on("click",function(){           
+                $.ajax({
+                url: "request.php?action=verify_otp",
+                type: "post",
+                dataType: "json",
+                data: { 
+                    otp : $("#otp_verify").val()
+                },
+                success: function(d) {
+                   if(d.success!=1)
+                   {
+                       alert(d.msg);
+                   }
+                   else{
+                       location.href=d.page;
+                   }
+                }
+            });
+            return false;
+            });
+
+            $("#resend_otp").on("click",function(){
+                $.ajax({
+                url: "request.php?action=resend_otp",
+                type: "post",
+                dataType: "json",
+                data: { 
+                    mobile : ''
+                },
+                success: function(d) {
+                  alert(d.msg);
+                }
+            });
+            return false;
+            });
+
         </script>
 
 

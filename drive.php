@@ -1,3 +1,9 @@
+<?php
+ require_once "model/db.php";
+if(!isset($_SESSION['user_id'])){
+                    header('location:login.php');
+                    }
+                    ?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -143,42 +149,9 @@
     
 <!--__________________________________________________________________________________________________________________________________-->
     
-    
-    
-            <!--== Header Bottom Start ==-->
-            <div id="header-bottom">
-                <div class="container">
-                    <div class="row">
-                        <!--== Logo Start ==-->
-                        <div class="col-lg-4">
-                            <a href="main.html" class="logo">
-                                <img src="assets/img/logo.png" alt="JSOFT">
-                            </a>
-                        </div>
-                        <!--== Logo End ==-->
-    
-                        <!--== Main Menu Start ==-->
-                        <div class="col-lg-8 d-none d-xl-block">
-                            <nav class="mainmenu alignright">
-                                <ul>
-                                    <li><a href="#">OVERVIEW</a></li>
-                                    <li class="active"><a href="drive.php">TO DRIVE</a></li>
-                                    <li><a href="ride.php">FOR RIDE</a></li>
-                                    <li><a href="notification.php">NOTIFICATION</a>
-                                    <li><a href="main.html">FAQ</a></li>
-                                    <li><a href="login.php">Log OUT</a></li>
-    
-                                </ul>
-                            </nav>
-                        </div>
-                        <!--== Main Menu End ==-->
-                    </div>
-                </div>
-            </div>
-            <!--== Header Bottom End ==-->
-        </header>
-        <!--== Header Area End ==-->
-
+<?php
+include_once 'menu.php';
+?>
 
 
 <!--__________________________________________________________________________________________________________________________________-->
@@ -390,28 +363,28 @@
                                     <div class="row vehicle">
                                         <div class="col-md-3">
                                             <label>
-                                                <input type="radio" name="vehicle" value="scooter">
+                                                <input type="radio" name="vehicle" value="1">
                                                 <img class="img-responsive img-circle" src="assets\img\Ride\01.png">Scooter
                                             </label>
                                         </div>
 
                                         <div class="col-md-3">
                                             <label>
-                                                    <input type="radio" name="vehicle" value="suv">
+                                                    <input type="radio" name="vehicle" value="3">
                                                     <img class="img-responsive img-circle" src="assets\img\Ride\02.png">SUV
                                             </label>                                        
                                         </div>
 
                                         <div class="col-md-3">
                                             <label>
-                                                    <input type="radio" name="vehicle" value="sedan">
+                                                    <input type="radio" name="vehicle" value="2">
                                                     <img class="img-responsive img-circle" src="assets\img\Ride\03.png">Sedan
                                             </label>                                        
                                         </div>
 
                                         <div class="col-md-3">
                                             <label>
-                                                    <input type="radio" name="vehicle" value="mpv">
+                                                    <input type="radio" name="vehicle" value="4">
                                                     <img class="img-responsive img-circle" src="assets\img\Ride\04.png">MPV
                                             </label>                                        
                                         </div>
@@ -463,7 +436,7 @@
                             </div>
                         </div>
                         <!-- Single Footer Widget End -->
-    
+
                         <!-- Single Footer Widget Start -->
                         <div class="col-lg-4 col-md-6">
                             <div class="single-footer-widget">
@@ -547,6 +520,16 @@
 <!--____________________________________________________________________________________________________________________________________________-->
 
 
+<?php
+                if($_SESSION['mobile_verified']==0){
+                    $mobile = $_SESSION['mobile'];
+                    require_once 'send-otp.php';
+                    $res = send_otp($mobile);
+                    echo '<style> .smodal { display: block; } </style>';
+                    include_once 'modal-otp.php';
+                }
+?>
+    
 
 
 
@@ -601,10 +584,10 @@
 
 
         <?php
-            $con = mysqli_connect("localhost","root","","cargo");
-            if(isset($_POST['SUBMIT'])) 
+      require_once "model/db.php";
+      if(isset($_POST['SUBMIT'])) 
             { 
-                // $user_id =  $_SESSION['user_id'];
+                $user_id =  $_SESSION['user_id'];
                 
                 $source = $_POST['source'];
                 $destination = $_POST['destination'];
@@ -620,10 +603,31 @@
                 $time = $hours.":".$minutes.":".$seconds;
 
                 $vehicle = $_POST['vehicle'];
+                if(strtotime($date.' '.$time)>time()){   
 
-                $qry = "INSERT INTO trip (source, destination, datee, timee, vehicle) 
-                        VALUES ('".$source."' , '".$destination."' , '".$date."' , '".$time."' , '".$vehicle."')";
+                $qry = "INSERT INTO trip (source, destination, datee, timee, vehicle_id, user_id) 
+                        VALUES ('".$source."' , '".$destination."' , '".$date."' , '".$time."' , $vehicle, $user_id)";
+                       // echo $qry;
+                     //   die;
                 mysqli_query($con, $qry);
+                $ins = mysqli_insert_id($con);
+                if($ins>0)
+                {
+                    $qry1 = "INSERT INTO passenger (trip_id) 
+                    VALUES ($ins)";              
+                    mysqli_query($con, $qry1);
+                    $ins1 = mysqli_insert_id($con);
+                    echo "<script>alert('Details Saved Successfully')</script>";
+                }
+                else
+                {
+                    echo "<script>alert('Something went wrong. Please try again later')</script>";
+                }
+            }
+            else
+            {
+                echo "<script>alert('Please select a valid date')</script>";
+            }
             }
             mysqli_close($con);
         ?>
@@ -663,7 +667,46 @@
                     else
                     return true;
                 }
-            </script>
+
+                $("#verifybtn").on("click",function(){           
+                $.ajax({
+                url: "request.php?action=verify_otp",
+                type: "post",
+                dataType: "json",
+                data: { 
+                    otp : $("#otp_verify").val()
+                },
+                success: function(d) {
+                   if(d.success!=1)
+                   {
+                       alert(d.msg);
+                   }
+                   else
+                   {
+                       location.href=window.location.href;
+                   }
+                }
+            });
+            return false;
+            });
+
+            $("#resend_otp").on("click",function(){
+                $.ajax({
+                url: "request.php?action=resend_otp",
+                type: "post",
+                dataType: "json",
+                data: { 
+                    mobile : ''
+                },
+                success: function(d) {
+                  alert(d.msg);
+                }
+            });
+            return false;
+            });
+
+        </script>
+
 
 
 

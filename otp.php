@@ -1,18 +1,27 @@
+<html>
+    <head>
+        <title>Send OTP</title>
+    </head>
+    <body>
+        <form method="post">
+            <label>Mobile Number.</label>
+            <input type="text" name="mobile_no" id="mobilr_no" maxlength="15">
+            <input type="submit" id="btnSend" name="btnSend" value="Submit">
+        </form>
+    </body>
+</html>
 
 <?php
-function send_otp($mobile) {
-    $mobileNumber = '91' . $mobile;
+if (isset($_POST['btnSend'])) {
+    $mobileNumber = '91' . $_POST['mobile_no'];
     
     $otp = mt_rand(99999, 999999);
 
-    $_SESSION['otp'] = $otp;
-
     $otp_msg = "Dear Customer,  Please enter the One Time Password (OTP) to continue CarGo Carpool Registration. Your OTP verification code is " . $otp;
 
-  //  echo '<br/><br/><br/>'.$otp_msg.'<br/><br/><br/>';
+    echo '<br/><br/><br/>'.$otp_msg.'<br/><br/><br/>';
     //Your authentication key
-    //$authKey = "290224AwtzqyenfcnQ5d5addbd";
-      $authKey = "306471AeHKiEVz5de3b4df";
+    $authKey = "290224AwtzqyenfcnQ5d5addbd";
 
 
 //Sender ID,While using route4 sender id should be 6 characters long.
@@ -47,9 +56,9 @@ function send_otp($mobile) {
     if (curl_errno($ch)) {
         echo 'error:' . curl_error($ch);
     }
-    
-    curl_close($ch);
 
-    return $output;
+    echo $output;
+
+    curl_close($ch);
 }
 ?>

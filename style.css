@@ -266,7 +266,7 @@
     margin-top: 10px;
     border: none;
     background: #f7c900;
-    /*text-align: center;*/
+    /*text-align: center;*/ 
     width: 100%;
     cursor: pointer;
     padding: 10px 0px;
@@ -275,7 +275,8 @@
 /* The Modal (background) */
 
 .smodal {
-    display: none;    
+      display: none;  
+    /* -webkit-display: none;   */
     /* Hidden by default */
     position: fixed;
     /* Stay in place */

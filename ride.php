@@ -1,3 +1,9 @@
+<?php
+ require_once "model/db.php";
+if(!isset($_SESSION['user_id'])){
+                    header('location:login.php');
+                    }
+                    ?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -148,44 +154,10 @@
     
     
 <!--__________________________________________________________________________________________________________________________________-->
-    
-    
-    
-            <!--== Header Bottom Start ==-->
-            <div id="header-bottom">
-                <div class="container">
-                    <div class="row">
-                        <!--== Logo Start ==-->
-                        <div class="col-lg-4">
-                            <a href="main.html" class="logo">
-                                <img src="assets/img/logo.png" alt="JSOFT">
-                            </a>
-                        </div>
-                        <!--== Logo End ==-->
-    
-                        <!--== Main Menu Start ==-->
-                        <div class="col-lg-8 d-none d-xl-block">
-                            <nav class="mainmenu alignright">
-                                <ul>
-                                    <li><a href="#">OVERVIEW</a></li>
-                                    <li><a href="drive.html">TO DRIVE</a></li>
-                                    <li class="active"><a href="ride.html">FOR RIDE</a></li>
-                                    <li><a href="main.html">NOTIFICATION</a></li>
-                                    <li><a href="main.html">FAQ</a></li>
-                                    <li><a href="login.html">Log OUT</a></li>
-    
-                                </ul>
-                            </nav>
-                        </div>
-                        <!--== Main Menu End ==-->
-                    </div>
-                </div>
-            </div>
-            <!--== Header Bottom End ==-->
-        </header>
-        <!--== Header Area End ==-->
-
-
+ 
+<?php
+include_once 'menu.php';
+?>
 
 <!--__________________________________________________________________________________________________________________________________-->
 
@@ -208,6 +180,21 @@
         </div>
     </section>
     <!--== Page Title Area End ==-->
+
+
+    <?php
+
+//$res = send_otp($mobile);
+                 //   print_r($res);
+                 if($_SESSION['mobile_verified']==0){
+                    $mobile = $_SESSION['mobile'];
+                    require_once 'send-otp.php';
+                    $res = send_otp($mobile);
+                    echo '<style> .smodal { display: block; } </style>';
+                    include_once 'modal-otp.php';
+                 }
+?>
+
 
     <!--== Login Page Content Start ==-->
     <section id="lgoin-page-wrap" class="section-padding">
@@ -562,9 +549,12 @@
 
 
         <?php
-            $con = mysqli_connect("localhost","root","","cargo");
-            if(isset($_POST['SUBMIT'])) 
+       
+      require_once "model/db.php";
+      if(isset($_POST['SUBMIT'])) 
             { 
+                $user_id =  $_SESSION['user_id'];
+
                 $source = $_POST['source'];
                 $destination = $_POST['destination'];
                 
@@ -572,20 +562,75 @@
                 $month = $_POST['month'];
                 $day = $_POST['day'];
                 $date = $year."-".$month."-".$day;
-
+            
                 $hours = $_POST['hours'];
                 $minutes = $_POST['minutes'];
                 $seconds = 00;
                 $time = $hours.":".$minutes.":".$seconds;
-                
-                $qry = "INSERT INTO ride (source, destination, datee, timee) 
-                        VALUES ('".$source."' , '".$destination."' , '".$date."' , '".$time."')";
+
+                if(strtotime($date.' '.$time)>time()){                
+                $qry = "INSERT INTO ride (source, destination, datee, timee, user_id) 
+                        VALUES ('".$source."' , '".$destination."' , '".$date."' , '".$time."', '".$user_id."')";
                 mysqli_query($con, $qry);
+                $ins = mysqli_insert_id($con);
+                if($ins>0)
+                {
+                    echo "<script>alert('Details Saved Successfully')</script>";
+                }
+                else
+                {
+                    echo "<script>alert('Something went wrong. Please try again later')</script>";
+                }
+            }
+            else
+            {
+                echo "<script>alert('Please select a valid date')</script>";
+            }
             }
             mysqli_close($con);
         ?>
 
 
+<script>
+
+$("#verifybtn").on("click",function(){           
+                $.ajax({
+                url: "request.php?action=verify_otp",
+                type: "post",
+                dataType: "json",
+                data: { 
+                    otp : $("#otp_verify").val()
+                },
+                success: function(d) {
+                   if(d.success!=1)
+                   {
+                       alert(d.msg);
+                   }  
+                   else
+                   {
+                       location.href=window.location.href;
+                   }                  
+                }
+            });
+            return false;
+            });
+
+            $("#resend_otp").on("click",function(){
+                $.ajax({
+                url: "request.php?action=resend_otp",
+                type: "post",
+                dataType: "json",
+                data: { 
+                    mobile : ''
+                },
+                success: function(d) {
+                  alert(d.msg);
+                }
+            });
+            return false;
+            });
+
+        </script>
 
 
 <!--__________________________________________________________________________________________________________________________________-->

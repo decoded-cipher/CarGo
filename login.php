@@ -361,28 +361,33 @@
 
         <?php
           $msg="";
-            $con = mysqli_connect("localhost","root","","cargo");
+           require_once "model/db.php";
 
             if(isset($_POST['SUBMIT'])) 
             {
-                session_start();
+               
                 // $user_id = $_POST['user_id'];
                 $username = $_POST['username'];
                 $passwrd = $_POST['passwrd'];
-                $qry = "SELECT username, passwrd, user_id FROM registration WHERE username='".$username."' AND passwrd='".$passwrd."' LIMIT 1";
+                $qry = "SELECT username, passwrd, user_id, mobile, mobile_verified FROM registration WHERE username='".$username."' AND passwrd='".$passwrd."' LIMIT 1";
 
                 $result = mysqli_query($con, $qry);
                 if(mysqli_num_rows($result) ==1)
                 {
+                    while($r = mysqli_fetch_array($result))
+                    {
+                     //   print_r($r);
+                      //  echo $r['user_id'];
+                        // $_SESSION['username'] = $r[0];
+                        $_SESSION['user_id'] =  $r['user_id'];
+                        $_SESSION['mobile'] =  $r['mobile'];
+                        $_SESSION['mobile_verified'] =  $r['mobile_verified'];
+                       // echo  $_SESSION['user_id'].' -- ggg'.;
+                    }
+                    if(isset($_SESSION['user_id'])){
                     header('location:drive.php');
-                }
-                while($r = mysqli_fetch_array($result))
-                {
-                    session_start();
-                    // $_SESSION['username'] = $r[0];
-                    $_SESSION['user_id'] = $r[2];
-
-                }
+                    }
+                }            
                 mysqli_close($con);
             }
         ?>
