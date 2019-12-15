@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
-    <head>
-        <meta charset="utf-8">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--=== Favicon ===-->
@@ -363,6 +363,7 @@
 $msg = "";
 require_once "model/db.php";
 
+
 if (isset($_POST['SUBMIT'])) {
 
     // $user_id = $_POST['user_id'];
@@ -380,7 +381,10 @@ if (isset($_POST['SUBMIT'])) {
             $_SESSION['mobile'] = $r['mobile'];
             $_SESSION['mobile_verified'] = $r['mobile_verified'];
             $_SESSION['name'] = $r['first_name'].' '.$r['last_name'];
+            
+            
         }
+        
         if (isset($_SESSION['user_id'])) {
             if (!headers_sent()) {
                 header('location:drive.php');
