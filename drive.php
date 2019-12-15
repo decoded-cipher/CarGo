@@ -1,9 +1,13 @@
 <?php
- require_once "model/db.php";
-if(!isset($_SESSION['user_id'])){
-                    header('location:login.php');
-                    }
-                    ?>
+require_once "model/db.php";
+if (!isset($_SESSION['user_id'])) {
+    if (!headers_sent()) {
+        header('location:login.php');
+    } else {
+        echo '<script>location.href="login.php"</script>';
+    }
+}
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -92,7 +96,7 @@ if(!isset($_SESSION['user_id'])){
             transition: all 0.4s ease 0s;
             width: 100%;
         }
-               
+ 
         /* .book button:hover {
             background-color: #ffd000;
             border-color: #ffd000;
@@ -151,6 +155,7 @@ if(!isset($_SESSION['user_id'])){
     
 <?php
 include_once 'menu.php';
+
 ?>
 
 
@@ -165,6 +170,7 @@ include_once 'menu.php';
                 <!-- Page Title Start -->
                 <div class="col-lg-12">
                     <div class="section-title  text-center">
+                        <p><?php echo "Welcome ". $_SESSION['name']; ?></p>
                         <h2>Drive with CarGo</h2>
                         <span class="title-line"><i class="fa fa-car"></i></span>
                         <p>Fill-up and experience the pleasure of Shared Trips</p>
@@ -394,6 +400,8 @@ include_once 'menu.php';
 								<div class="log-btn">
                                     <button type="submit" name="SUBMIT" value="SUBMIT" onClick="return validation();">
 									    <i class="fa fa-check-square"></i> Book Now</button>
+                                    <button type="button" name="view" onClick="javascript:location.href='created_drives.php'">
+									    <i class="fa fa-eye"></i> View Created Drives</button>                                        
 								</div>
 							</form>
                 		</div>
@@ -613,10 +621,10 @@ include_once 'menu.php';
                 $ins = mysqli_insert_id($con);
                 if($ins>0)
                 {
-                    $qry1 = "INSERT INTO passenger (trip_id) 
-                    VALUES ($ins)";              
-                    mysqli_query($con, $qry1);
-                    $ins1 = mysqli_insert_id($con);
+//                    $qry1 = "INSERT INTO passenger (trip_id) 
+//                    VALUES ($ins)";              
+//                    mysqli_query($con, $qry1);
+//                    $ins1 = mysqli_insert_id($con);
                     echo "<script>alert('Details Saved Successfully')</script>";
                 }
                 else
