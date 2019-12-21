@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
-    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        
+    <head>
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--=== Favicon ===-->
@@ -69,7 +69,7 @@
 
                         <!--== Single HeaderTop Start ==-->
                         <div class="col-lg-3 text-center">
-                            <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                            <i class="fa fa-clock-o"></i>  24*7
                         </div>
                         <!--== Single HeaderTop End ==-->
 
@@ -363,7 +363,6 @@
 $msg = "";
 require_once "model/db.php";
 
-
 if (isset($_POST['SUBMIT'])) {
 
     // $user_id = $_POST['user_id'];
@@ -381,10 +380,7 @@ if (isset($_POST['SUBMIT'])) {
             $_SESSION['mobile'] = $r['mobile'];
             $_SESSION['mobile_verified'] = $r['mobile_verified'];
             $_SESSION['name'] = $r['first_name'].' '.$r['last_name'];
-            
-            
         }
-        
         if (isset($_SESSION['user_id'])) {
             if (!headers_sent()) {
                 header('location:drive.php');

@@ -141,7 +141,7 @@ if (!isset($_SESSION['user_id']) || !isset($_REQUEST['id'])) {
 
                         <!--== Single HeaderTop Start ==-->
                         <div class="col-lg-3 text-center">
-                            <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                            <i class="fa fa-clock-o"></i>  24*7
                         </div>
                         <!--== Single HeaderTop End ==-->
 
@@ -231,7 +231,10 @@ if (!isset($_SESSION['user_id']) || !isset($_REQUEST['id'])) {
 //                                                            
 //                                                          echo $qry1;  
                                                             
-$qry1 = "SELECT * FROM passenger INNER JOIN ride ON passenger.ride_id = ride.ride_id INNER JOIN registration ON registration.user_id = ride.user_id WHERE passenger.trip_id = " . $res['trip_id']." AND registration.user_id = ".$_SESSION['user_id'];
+                                                        $qry1 = "SELECT * FROM passenger INNER JOIN ride ON passenger.ride_id = 
+                                                        ride.ride_id INNER JOIN registration ON registration.user_id = ride.user_id 
+                                                        WHERE passenger.trip_id = " . $res['trip_id']." AND 
+                                                        registration.user_id = ".$_SESSION['user_id'];
                                                            $result1 = mysqli_query($con, $qry1);
                                                             $count1 = mysqli_num_rows($result1);
                                                             $res1 = mysqli_fetch_array($result1);

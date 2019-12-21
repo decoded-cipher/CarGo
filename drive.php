@@ -1,6 +1,5 @@
 <?php
 require_once "model/db.php";
-
 if (!isset($_SESSION['user_id'])) {
     if (!headers_sent()) {
         header('location:login.php');
@@ -12,8 +11,8 @@ if (!isset($_SESSION['user_id'])) {
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    
+<head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--=== Favicon ===-->
@@ -130,7 +129,7 @@ if (!isset($_SESSION['user_id'])) {
     
                         <!--== Single HeaderTop Start ==-->
                         <div class="col-lg-3 text-center">
-                            <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                            <i class="fa fa-clock-o"></i>  24*7
                         </div>
                         <!--== Single HeaderTop End ==-->
     

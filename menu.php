@@ -13,16 +13,15 @@
                         <!--== Logo End ==-->
     
                         <!--== Main Menu Start ==-->
-                        <div class="col-lg-8 d-none d-xl-block">
+                        <div class="col-lg-6 d-none d-xl-block">
                             <nav class="mainmenu alignright">
                                 <ul>
-                                    <li><a href="#">OVERVIEW</a></li>
+                                    <li><a href="#"></a></li>
                                     <li <?php echo ($_SERVER['REQUEST_URI']=='/CarGo/drive.php') ? 'class="active"' : ''; ?>><a href="drive.php" >TO DRIVE</a></li>
                                     <li <?php echo ($_SERVER['REQUEST_URI']=='/CarGo/ride.php') ? 'class="active"' : ''; ?>><a href="ride.php">FOR RIDE</a></li>
-                                    <li><a href="notification.php">NOTIFICATION</a></li>
                                    
-                                    <li><a href="logout.php">Log OUT</a></li>
-    
+                                    <li><a href="logout.php">LOG OUT</a></li>
+                                        
                                 </ul>
                             </nav>
                         </div>

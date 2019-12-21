@@ -135,7 +135,7 @@ if (!isset($_SESSION['user_id'])) {
 
                         <!--== Single HeaderTop Start ==-->
                         <div class="col-lg-3 text-center">
-                            <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                            <i class="fa fa-clock-o"></i>  24*7
                         </div>
                         <!--== Single HeaderTop End ==-->
 

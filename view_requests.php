@@ -153,7 +153,7 @@ if (!isset($_SESSION['user_id']) || !isset($_REQUEST['id'])) {
 
                         <!--== Single HeaderTop Start ==-->
                         <div class="col-lg-3 text-center">
-                            <i class="fa fa-clock-o"></i> Mon-Fri 09.00 - 17.00
+                            <i class="fa fa-clock-o"></i>  24*7
                         </div>
                         <!--== Single HeaderTop End ==-->
 
@@ -199,7 +199,7 @@ if (!isset($_SESSION['user_id']) || !isset($_REQUEST['id'])) {
                         <!-- Page Title Start -->
                         <div class="col-lg-12">
                             <div class="section-title  text-center">
-                                <h2>Ride with CarGo</h2>
+                                <h2>Drive with CarGo</h2>
                                 <span class="title-line"><i class="fa fa-car"></i></span>
                                 <p>Fill-up and experience the pleasure of Shared Trips</p>
                             </div>
@@ -210,12 +210,17 @@ if (!isset($_SESSION['user_id']) || !isset($_REQUEST['id'])) {
             </section>
             <!--== Page Title Area End ==-->
 
-<?php
-$qry = "SELECT passenger.p_id, registration.first_name, registration.last_name, registration.email, registration.mobile, trip.source, trip.destination, trip.datee, trip.timee, passenger.status, vehicle.vehicle_name, vehicle.passengers_no  FROM passenger INNER JOIN trip ON trip.trip_id = passenger.trip_id INNER JOIN ride ON ride.ride_id = passenger.ride_id INNER JOIN registration ON  ride.user_id = registration.user_id INNER JOIN vehicle ON vehicle.vehicle_id = trip.vehicle_id WHERE passenger.trip_id=" . $_REQUEST['id'] . " AND trip.user_id=" . $_SESSION['user_id'] . " order by passenger.p_id ASC";
-// echo $qry;
-$result = mysqli_query($con, $qry);
-$count = mysqli_num_rows($result);
-?>
+        <?php
+        $qry = "SELECT passenger.p_id, registration.first_name, registration.last_name, registration.email, 
+        registration.mobile, trip.source, trip.destination, trip.datee, trip.timee, passenger.status, 
+        vehicle.vehicle_name, vehicle.passengers_no  FROM passenger INNER JOIN trip ON trip.trip_id = 
+        passenger.trip_id INNER JOIN ride ON ride.ride_id = passenger.ride_id INNER JOIN registration ON  
+        ride.user_id = registration.user_id INNER JOIN vehicle ON vehicle.vehicle_id = trip.vehicle_id WHERE 
+        passenger.trip_id=" . $_REQUEST['id'] . " AND trip.user_id=" . $_SESSION['user_id'] . " order by passenger.p_id ASC";
+        // echo $qry;
+        $result = mysqli_query($con, $qry);
+        $count = mysqli_num_rows($result);
+        ?>
 
 
             <!--== Login Page Content Start ==-->
